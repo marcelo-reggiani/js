@@ -19,23 +19,25 @@ if (media > 7) {
 /*2. Simule a tabela do IMC com base no valor calculado pela formula: IMC = PESO / (ALTURA x ALTURA).
 Indique o status com base no valor do IMC.*/
 
-let peso = 125;
+let peso = 125.0;
 let altura = 1.81;
-let imc = (peso / (altura * altura));
+let imc = peso / altura ** 2;
+
+console.log("Seu IMC é: ", imc.toFixed(2));
 
 if (imc < 16) {
   console.log("Magreza Grave!");
-} else if ( icm >= 16 && icm < 17) {
+} else if ( imc >= 16 && imc < 17) {
   console.log("Magreza Moderada");
-} else if ( icm >= 17 && icm < 18.5) {
+} else if ( imc >= 17 && imc < 18.5) {
   console.log("Magreza Leve");
-} else if ( icm >= 18.5 && icm < 25) {
+} else if ( imc >= 18.5 && imc < 25) {
   console.log("Peso Ideal");
-} else if ( icm >= 25 && icm < 30) {
+} else if ( imc >= 25 && imc < 30) {
   console.log("Sobre Peso");
-} else if ( icm >= 30 && icm < 35) {
+} else if ( imc >= 30 && imc < 35) {
   console.log("Obesidade Grau 1");
-} else if ( icm >= 35) {
+} else if ( imc >= 35) {
   console.log("Obesidade Grau 2");
 }
 
