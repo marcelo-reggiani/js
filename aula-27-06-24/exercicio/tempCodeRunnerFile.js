@@ -1,7 +1,13 @@
-function conferencia(palavra1, palavra2) {
-  console.log(palavra1 === palavra2);
-  return
-}
-let palavra1 = "Marcelo";
-let palavra2 = "Reggiani";
-console.log(conferencia(palavra1, palavra2));
+function extensoes(arquivo, extensao) {
+let arquivosCorretos = [];
+for (let i = 0; i < arquivo.length; i++) {
+  if (arquivo[i].endsWith(extensao)) {
+    arquivosCorretos.push(arquivo[i]) ;
+  };
+};
+return arquivosCorretos;
+};
+
+let arquivo = ["documento.doc", "musica.mp3", "arquivo.pdf", "executavel.exe", "sucesso.mp3"];
+let extensao = ".mp3";
+console.log(extensoes(arquivo, extensao));

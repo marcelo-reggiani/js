@@ -1,6 +1,6 @@
 // 1. Crie uma função que recebe um array com os nomes dos alunos de uma turma, e outro array que recebe a lista de presença com os nomes. Retorne uma lista com quais alunos faltaram.
 
-function chamada(alunos, listaPresença) {
+/*function chamada(alunos, listaPresença) {
   let faltou = [];
 
   for (let i = 0; i < alunos.length; i++ ) {
@@ -14,7 +14,6 @@ function chamada(alunos, listaPresença) {
     }
     if (!alunoPresente) {
       faltou.push(alunos[i]);
-    
     }
   }
   return faltou;
@@ -23,9 +22,23 @@ let alunos = ["Marcelo", "Pedro", "Maria", "Camila"];
 let listaPresença = ["Marcelo", "Camila", "Maria"];
 
 let faltou = chamada(alunos, listaPresença);
-console.log(faltou);
+console.log(`Os alunos que faltaram são: ${faltou}`);*/
+let alunos = ["Marcelo", "Pedro", "Maria", "Camila"];
+let listaPresenca = ["Marcelo", "Camila", "Maria"];
 
-
+function listarAusentes(alunos, listaPresenca) {
+  let ausentes = [];
+    for (let nome of alunos) {
+      if (listaPresenca.includes(nome)) {
+        console.log(`O aluno ${nome} esta presente`);
+      } else {
+          console.log(`O aluno ${nome} faltou`);
+          ausentes.push(nome);
+        }
+    }
+    return ausentes
+}
+console.log(`A lista com os ausentes: ${listarAusentes(alunos, listaPresenca)}`);
 
 // 2. Crie uma função que recebe um array de números e retorna um array com todos os valores elevados ao quadrado.
 
@@ -115,7 +128,7 @@ console.log(stringInvertida(palavra));
 
 function repetirPalavra (palavraEscolhida, numeroEscolhido) {
   let palavraRepetida = "";
-  for (let i = 1; i <= numeroEscolhido; i++) {
+  for (let i = 1; i <= numeroEscolhido; i++) {  //return palavraEscolhida.repeat(numeroEscolhido)
     palavraRepetida = palavraRepetida + palavraEscolhida;
   }
   return palavraRepetida;
@@ -143,6 +156,25 @@ console.log(conferencia(palavra1, palavra2));
 
 // 11. Crie uma função que recebe um dia, mês e ano dentro de um array. Retorna a data utilizando o separador que também será definido via parâmetros da função (-, / ou .). Ex: formatarData(array, '.') -> '20.06.2000'
 
+let dataArray = ["20", "06", "2000"];
 
+function formatarData(arr, sep) {
+  return arr.join(sep);
+}
+
+console.log(formatarData(dataArray, "-"));
 
 // 12. Crie uma função que recebe um array, um valor de busca e um valor padrão. Caso o elemento exista no array retorne o elemento, caso contrário retorne o valor padrão definido via parâmetro. Ex: busca(array, 'batata', 'não tem batata') -> 'não tem batata'
+
+function busca(array, elemento, valorPadrao) {
+  if(array.includes(elemento)) {
+      return elemento;
+  }
+
+  // Caso não entre no if da L150, o código chegará na linha abaixo (equivale a um else);
+  return valorPadrao;
+}
+
+let array = ["alface", "pimenta", "maionese", "ovo"];
+console.log(busca(array, "batata", "Não tem batata =("));
+console.log(busca(array, "pimenta", "Não tem pimenta =)"));
