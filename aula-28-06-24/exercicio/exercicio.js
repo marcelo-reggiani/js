@@ -44,6 +44,17 @@ console.log(verificacao(palavra));
 
 // Exercício 4: Escreva uma função que conte o número de vogais em uma string. Dica: Você pode usar um array com todas as vogais possíveis e verificar cada letra da string para ir contando.
 
+function contagemVogais(palavra) {
+const vogais = ["a", "e", "i", "o", "u"];
+let contagem = 0;
+const palavraLower = palavra.toLowerCase();
+for(let letra of palavraLower) {
+  if(vogais.includes(letra)) {
+    contagem++;
+  }
+} return contagem;
+}
+console.log(contagemVogais("bAtaTa"));
 
 // Exercício 5: Escreva uma função que receba um array de números e retorne o menor número do array.
 
