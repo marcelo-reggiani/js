@@ -78,6 +78,19 @@ console.log(`A média das notas é: ${media(notas)}`);
 
 // Exercício 7: Escreva uma função que conte a frequência de cada caractere em uma string. Dica: use objetos para guardar as contagens de cada caractere.
 
+function contarCaracteres(str) {
+  const contagem = {};
+  for (let caractere of str) {
+    contagem[caractere] = 0;
+  }
+  for (let caractere of str) {
+    contagem[caractere]++;
+  }
+  console.log(contagem);
+}
+contarCaracteres("batata");
+
+
 
 // Exercício 8: Escreva uma função que recebe um email, e ofusca parte do seu endereço. Por exemplo: jose.almir@dev.com -> j*********@dev.com.
 
@@ -90,7 +103,7 @@ const ofuscarEmail1 = (email) => {
 }
 console.log(ofuscarEmail1("marcelo.reggiani@dev.com")); 
 
-// DESESTRUTURAÇÃO
+// DESESTRUTURAÇÃO do exemplo acima
 const ofuscarEmail = (email) => {
   const [usuario, dominio] = email.split("@"); // O valor do indice 0 é armazenado na variavel usuario e o valor do indice 1 na variavel dominio
   return usuario[0] + "*******" + "@" + dominio;
