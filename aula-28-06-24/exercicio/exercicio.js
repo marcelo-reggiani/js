@@ -81,6 +81,25 @@ console.log(`A média das notas é: ${media(notas)}`);
 
 // Exercício 8: Escreva uma função que recebe um email, e ofusca parte do seu endereço. Por exemplo: jose.almir@dev.com -> j*********@dev.com.
 
+const ofuscarEmail1 = (email) => {
+  const partes = email.split("@");
+  const usuario = partes[0];
+  const dominio = partes[1];
 
+  return usuario[0] + "*******" + "@" + dominio;
+}
+console.log(ofuscarEmail1("marcelo.reggiani@dev.com")); 
+
+// DESESTRUTURAÇÃO
+const ofuscarEmail = (email) => {
+  const [usuario, dominio] = email.split("@"); // O valor do indice 0 é armazenado na variavel usuario e o valor do indice 1 na variavel dominio
+  return usuario[0] + "*******" + "@" + dominio;
+}
+console.log(ofuscarEmail("marcelo.reggiani@dev.com")); 
+
+// EXEMPLO de desestruturação de array
+const [nome1, nome2, nome3, nome4] = ["Almir", "Marcelo", "Cristiane", "Victor"];
+console.log(nome1);
+console.log(nome2, nome4);
 
 
