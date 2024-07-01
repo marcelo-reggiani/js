@@ -16,3 +16,8 @@ let presenca = ["Gabriel Braga", "Victor Icoma", "Bismark"];
 
 const ausentes = turma.filter((aluno) => !presenca.includes(aluno));
 console.log(ausentes);
+
+// Exemplo  Filtrar palavras acima de 5 caracteres
+let palavras = ["batata", "pão", "arroz", "carne", "ovo", "alface"];
+let palavrasAcima5 = palavras.filter((palavra) => palavra.length > 5);
+console.log(palavrasAcima5);
